@@ -71,16 +71,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.button1:
-                Toast.makeText( this, "Toast1 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText( this, "Toast 1 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button2:
-                Toast.makeText( this, "Toast2 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText( this, "Toast 2 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3:
-                Toast.makeText( this, "Toast3 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText( this, "Toast 3 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button4:
-                Toast.makeText( this, "Toast4 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText( this, "Toast 4 Button", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
