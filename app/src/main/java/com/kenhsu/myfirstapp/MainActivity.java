@@ -1,5 +1,6 @@
 package com.kenhsu.myfirstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText( this, "Toast 2 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3:
-                Toast.makeText( this, "Toast 3 Button", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, zombieMovies.class);
+                startActivity(i);
                 break;
             case R.id.button4:
                 Toast.makeText( this, "Toast 4 Button", Toast.LENGTH_SHORT).show();
