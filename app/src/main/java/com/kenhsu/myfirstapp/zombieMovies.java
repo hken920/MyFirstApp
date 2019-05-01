@@ -21,17 +21,9 @@ public class zombieMovies extends AppCompatActivity {
 
     ListView listView;
 
-    String[] moviePrem = new String[] {"1984", "2009, Tommy Wirkola", "2004, Michele Soavi", "2007, Juan Carlos Fresnadillo",
-            "1986, Fred Dekker", "2012, Chris Butler,  Sam Fell", "2009, Ruben Fleischer", "2007, Robert Rodriguez",
-            "2016, Sang-ho Yen", "1981, Lucio Fulci", "1985, George Romero", "1988, Wes Craven" , "1985, Stuart Gordon",
-            "1971, Lucio Fulci", "2004, Zack Snyder", "1985, Dan O'Bannon", "1992, Peter Jackson", "2002, Danny Boyle",
-            "1968, George Romero", "2004, Edgar Wright", "1978, George Romero"};
+    String[] moviePrem = new String[] {"Night of the Comet,1984", "Dead Snow,2009", "Cemetery Man,2004", "28 Weeks Later,2007", "Night of the Creeps,1986", "ParaNorman,2012", "Zombieland,2009", "Planet Terror,2007", "Train to Busan,2016", "The Beyond,1981", "Day of the Dead,1985", "The Serpent & the Rainbow,1988", "Re-Animator,1985", "Zombi 2,1971", "Dawn of the Dead,2004", "Return of the Living Dead,1985", "Dead Alive,1992", "28 Days Later,2002", "Night of the Living Dead,1968", "Shawn of the Dead,2004", "Dawn of the Dead,1978" };
 
-    String[] movieNames = {"Night of the Comet","Dead Snow","Cemetery Man", "28 Weeks Later",
-            "Night of the Creeps", "ParaNorman", "Zombieland", "Planet Terror", "Train to Busan",
-            "The Beyond", "Day of the Dead","The Serpent & the Rainbow", "Re-Animator", "Zombi 2",
-            "Dawn of the Dead", "Return of the Living Dead", "Dead Alive", "28 Days Later",
-            "Night of the Living Dead", "Shawn of the Dead", "Dawn of the Dead"};
+    String[] movieDir = {"", "Tommy Wirkola", "Michele Soavi", "Juan Carlos Fresnadillo", "Fred Dekker", "Chris Butler, Sam Fell", "Ruben Fleischer","Robert Rodriguez","Sang-ho Yen","Lucio Fulci","George Romero","Wes Craven","Stuart Gordon","Lucio Fulci","Zack Snyder","Dan O'Bannon","Peter Jackson","Danny Boyle","George Romero","Edgar Wright","George Romero"};
 
     String[] movieDesc = {"What would kids in the 1980s do if the apocalypse blew through the world without them noticing? Hang out at the mall, but of course. That’s the set-up for this very funny, quite dated horror-comedy, which begins when a quartet of adolescents lock themselves inside a projection booth at the mall’s multiplex. This somehow allows them to live through an extinction level event of some sort, which has also left roaming bands of murderous mutants. Catherine Mary Stewart of the equally inexplicable Weekend at Bernie’s leads the film, but it’s a movie of mood more than substance ultimately. Does the wealth-fueled naiveté of the average white teenager survive in a vacuum? Does it go away when they are being hunted for sustenance? It’s an interesting to watch on these terms and when the zombies show up, director Thom Eberhardt adds menace and a tight feel for suspense to the action sequences. And if we’re being honest, it belongs on this list for its soundtrack alone. The rest of this is just whip cream and cherries. – Chris Cabin",
             "With so many zombie movies over the years, eventually you’re going to run out of ways to freshen up the sub-genre. Enter Wirkola’s decidedly skewed take on zombies in this horror-comedy with plenty of guts. Sure, zombies are great movie monsters, but if you have Nazi zombies, well you’ve just doubled-down on the level of villainy (and pun-worthiness) in your picture! \\nThis splatter-fest puts a Nordic spin on the traditional zombie by adding in elements of the Draugr, an undead creature from Scandinavian folklore that fiercely protects its treasure horde. In the case of Dead Snow, these draugr happen to be former SS soldiers who terrorized a Norwegian town and looted their belongings, only to be done in or chased into the freezing mountains by the villagers themselves. Dead Snow gets originality points for this, for sure. It’s also a very funny, gory, and satisfyingly violent movie with elements of Evil Dead and “teen sex/slasher” flicks scattered throughout. And if you like it, there’s more where that came from in the sequel, Dead Snow: Red vs Dead. – Dave Trumbore",
@@ -95,6 +87,7 @@ public class zombieMovies extends AppCompatActivity {
                 intent.putExtra("name" , moviePrem[position]);
                 intent.putExtra("image", moviePic[position]);
                 intent.putExtra("desc", movieDesc[position]);
+                intent.putExtra("dir", movieDir[position]);
 
                 startActivity(intent);
             }
