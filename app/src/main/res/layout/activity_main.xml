@@ -88,7 +88,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="117dp"
         android:layout_marginBottom="58dp"
-        android:text="Button"
+        android:text="Movies"
         app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
