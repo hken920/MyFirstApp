@@ -7,8 +7,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,18 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Toolbar jin_toolbar = findViewById(R.id.jin_navi);
+        setSupportActionBar(jin_toolbar);
 
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
 
+
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
+
+
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
     }
@@ -50,6 +56,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView =(SearchView) searchItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(MainActivity.this, query, Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Log.d("Mainactivity", "onqueryTexChange"+newText);
+                return true;
+            }
+
+        });
         return true;
     }
 
@@ -58,11 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        //if (id == R.id.action_search) {
+            //return true;
+        //}
+        switch (item.getItemId()){
+            case R.id.action_search:
+                return true;
+            case R.id.info:
+                Intent intent = new Intent(MainActivity.this, about.class);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -72,18 +101,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.button1:
-                Toast.makeText( this, "Toast 1 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Toast 1 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button2:
-                Toast.makeText( this, "Toast 2 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Toast 2 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3:
                 Intent i = new Intent(MainActivity.this, zombieMovies.class);
                 startActivity(i);
                 break;
             case R.id.button4:
-                Toast.makeText( this, "Toast 4 Button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Toast 4 Button", Toast.LENGTH_SHORT).show();
                 break;
+
         }
+
     }
 }
