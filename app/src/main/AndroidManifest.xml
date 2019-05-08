@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailActivity"></activity>
-        <activity android:name=".zombieMovies" />
+        <activity android:name=".about"
+            android:label="About"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".DetailActivity"
+            android:label="MovieDetail"
+            android:parentActivityName=".zombieMovies"/>
+        <activity android:name=".zombieMovies"
+            android:label="ZombieMovies"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
