@@ -104,7 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(this, "Toast 1 Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button2:
-                Toast.makeText(this, "Toast 2 Button", Toast.LENGTH_SHORT).show();
+                Intent j = new Intent(MainActivity.this, camActivity.class);
+                startActivity(j);
                 break;
             case R.id.button3:
                 Intent i = new Intent(MainActivity.this, zombieMovies.class);
