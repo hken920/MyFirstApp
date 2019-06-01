@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,9 +73,9 @@ public class camActivity extends AppCompatActivity {
             ImageView image= rowView.findViewById(R.id.image);
             label.setText(values.get(position).label);
             String imageUrl = values.get(position).image;
-//            if (!imageUrl.isEmpty()){
-//
-//            }
+            if (!imageUrl.isEmpty()){
+                Picasso.get().load(imageUrl).into(image);
+            }
             return  rowView;
         }
     }
@@ -130,5 +131,4 @@ public class camActivity extends AppCompatActivity {
         }
         // END_INCLUDE(connect)
     }
-
 }
