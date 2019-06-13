@@ -18,4 +18,15 @@ public class cams {
         this.owner= image;
         this.coordinates= coordinates;
     }
+    public String imageUrl() {
+        return this.image;
+    }
+
+    public String getLabel(){
+        return this.label;
+    }
+
+    public double[] getCoords(){
+        return this.coordinates;
+    }
 }

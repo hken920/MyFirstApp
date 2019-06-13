@@ -51,10 +51,10 @@ public class camActivity extends AppCompatActivity {
         listAdapter =new CameraListAdapter(this, cameraData);
         cameraList.setAdapter(listAdapter);
 
-//        checkNetworkConnection();
-//        if (wifiConnected || mobileConnected){
+        checkNetworkConnection();
+        if (wifiConnected || mobileConnected){
         loadCameraData(dataUrl);
-//        }
+        }
     }
 
     public class CameraListAdapter extends ArrayAdapter<cams>{
@@ -93,8 +93,8 @@ public class camActivity extends AppCompatActivity {
                                 double[] coords = {camera.getDouble("ypos"), camera.getDouble("xpos")};
                                 cams c = new cams(
                                         camera.getString("cameralabel"),
-                                        camera.getString("ownershipcd"),
                                         camera.getJSONObject("imageurl").getString("url"),
+                                        camera.getString("ownershipcd"),
                                         coords
                                 );
                                 cameraData.add(c);
