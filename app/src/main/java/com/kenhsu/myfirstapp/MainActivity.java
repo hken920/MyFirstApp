@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void signIn() {
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
         mAuth.signInWithEmailAndPassword("Hken920@gmail.com","apricot")
                 .addOnCompleteListener(this, new
                         OnCompleteListener<AuthResult>() {
@@ -183,7 +184,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent l = new Intent(MainActivity.this, MapActivity.class);
                 startActivity(l);
                 break;
-
         }
 
     }
