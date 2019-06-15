@@ -41,8 +41,8 @@ public class TeamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team);
 //
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.jin_navi);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -81,6 +81,9 @@ public class TeamActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setSupportActionBar(Toolbar toolbar) {
     }
 
     private void writeNewUser(String userId, String name, String email) {
