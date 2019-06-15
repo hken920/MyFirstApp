@@ -67,8 +67,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
-        locationPermissionGranted=true;
-
         mapFragment.getMapAsync(this);
 
         checkNetworkConnections();
