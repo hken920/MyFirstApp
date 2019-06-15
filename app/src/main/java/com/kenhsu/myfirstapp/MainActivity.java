@@ -29,7 +29,11 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
-    EditText userEmail, userPass;
+    private EditText userEmail, userPass, userName;
+//
+//    String name= userName.getText().toString();
+//    String email=userEmail.getText().toString();
+//    String pass=userPass.getText().toString();
 
 
     @Override
@@ -40,8 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(jin_toolbar);
 
         mAuth = FirebaseAuth.getInstance();
-        userEmail = findViewById(R.id.editText7);
-        userPass = findViewById(R.id.passText);
+//        userEmail = findViewById(R.id.editText7);
+//        userPass = findViewById(R.id.passText);
+//        userName = findViewById(R.id.nameText);
 
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        mAuth.signInWithEmailAndPassword("Hken920@gmail.com","apricot")
+        mAuth.signInWithEmailAndPassword("hken920@gmail.com","apricot")
                 .addOnCompleteListener(this, new
                         OnCompleteListener<AuthResult>() {
                             @Override
@@ -169,8 +174,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.button1:
-//                Intent k = new Intent(MainActivity.this, MapsActivity.class);
-//                startActivity(k);
+                Toast.makeText(MainActivity.this, "Button ", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button2:
                 Intent j = new Intent(MainActivity.this, camActivity.class);

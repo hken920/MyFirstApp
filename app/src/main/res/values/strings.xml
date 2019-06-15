@@ -10,4 +10,5 @@
     <string name="title_activity_team">TeamActivity</string>
     <string name="emailInput">Email</string>
     <string name="passInput">Password</string>
+    <string name="userInput">UserName</string>
 </resources>
