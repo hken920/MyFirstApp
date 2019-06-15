@@ -60,31 +60,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-
+            public void onClick(View v) {
+                signIn();
             }
         });
-//        button.setOnClickListener(new View.OnClickListener() {
+
+//
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v) {
-//                signIn();
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//
+//
 //            }
 //        });
+
 
     }
 
     private void signIn() {
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
         mAuth.signInWithEmailAndPassword("hken920@gmail.com","apricot")
                 .addOnCompleteListener(this, new
                         OnCompleteListener<AuthResult>() {
@@ -122,7 +122,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         });
     }
-
 
 
     @Override

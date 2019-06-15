@@ -121,7 +121,7 @@ public class TeamActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View rowView = inflater.inflate(R.layout.activity_team, parent, false);
+            View rowView = inflater.inflate(R.layout.team_list, parent, false);
             TextView title = rowView.findViewById(R.id.item_title);
             title.setText(values.get(position).username);
             TextView subtitle = rowView.findViewById(R.id.item_subtitle);
